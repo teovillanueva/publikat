@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1709073069015,
+      "tag": "0000_exotic_amphibian",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1709146994993,
+      "tag": "0001_stiff_grandmaster",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1709147439100,
+      "tag": "0002_rich_archangel",
+      "breakpoints": true
+    }
+  ]
+}

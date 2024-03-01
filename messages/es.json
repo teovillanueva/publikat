@@ -1,0 +1,196 @@
+{
+  "Delete-Billboard": {
+    "title": "Eliminar cartel",
+    "description": "¿Estas seguro que deseas eliminar este cartel? Una ves eliminar no podrás volver atrás.",
+    "submit": "Eliminar",
+    "cancel": "Cancelar"
+  },
+  "Admin": {
+    "Billboards": {
+      "title": "Carteles",
+      "description": "Aqui puedes ver todos los carteles que tienes en tu cuenta.",
+      "Billboard-Form": {
+        "placeholder": {
+          "address": "Calle Falsa 123",
+          "daily-impressions": "1000",
+          "resolution-width": "1920",
+          "resolution-height": "1080",
+          "schedule": "Selecciona un tipo de programación",
+          "width": "300",
+          "height": "200",
+          "spot-duration": "15",
+          "latitude": "-34.603722",
+          "longitude": "-58.381592"
+        },
+        "help": {
+          "daily-impressions": "Cantidad de veces que la publicidad es mostrada en un día"
+        },
+        "address": "Dirección",
+        "daily-impressions": "Impresiones diarias",
+        "schedule": "Programación",
+        "resolution-width": "Ancho de resolución (pixeles)",
+        "resolution-height": "Alto de resolución (pixeles)",
+        "width": "Ancho (centímetros)",
+        "height": "Alto (centimetros)",
+        "spot-duration": "Duración del spot (segundos)",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "error": {
+          "title": "Error al publicar el cartel",
+          "description": "Hubo un error al publicar tu cartel. Por favor, inténtalo de nuevo."
+        },
+        "success": {
+          "title": "Cartel publicado",
+          "description": "Tu cartel ha sido publicado con éxito."
+        }
+      },
+      "Create-Billboard": {
+        "title": "Publicar un cartel",
+        "description": "Completa los datos de tu cartel para publicarlo.",
+        "submit": "Publicar cartel"
+      },
+      "Update-Billboard": {
+        "title": "Editar cartel",
+        "description": "Completa los datos de tu cartel para actualizarlo.",
+        "submit": "Actualizar cartel"
+      }
+    }
+  },
+
+  "Onboarding": {
+    "title": "Comencemos",
+    "description": "Necesitamos algunos datos para completar tu perfil de proveedor.",
+    "form": {
+      "placeholder": {
+        "name": "Cartelería fabulosa",
+        "business-name": "Mi Empresa SRL",
+        "tax-id": "00-00000000-0",
+        "legal-address": "Calle Falsa 123"
+      },
+      "name": "Nombre fantasia",
+      "business-name": "Razón social",
+      "tax-id": "CUIT/RUT",
+      "legal-address": "Dirección legal",
+      "submit": "Completar perfil",
+      "error": {
+        "title": "Error al completar el perfil",
+        "description": "Hubo un error al completar tu perfil. Por favor, inténtalo de nuevo."
+      }
+    }
+  },
+  "Sign-In": {
+    "title": "Iniciar sesión",
+    "description": "Inicia sesión para reservar un cartel",
+    "continue-with": "O continuar con",
+    "form": {
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Iniciar sesión",
+      "forgot-password": "¿Olvidaste tu contraseña?",
+      "no-account": "¿No tienes una cuenta?",
+      "sign-up": "Regístrate",
+      "error": {
+        "title": "Error al iniciar sesión",
+        "description": "El correo electrónico o la contraseña son incorrectos. Por favor, inténtalo de nuevo."
+      }
+    }
+  },
+  "Sign-Up": {
+    "title": "Registrarse",
+    "description": "Regístrate para reservar un cartel",
+    "continue-with": "O continuar con",
+    "verification": {
+      "title": "Verificación de correo electrónico",
+      "description": "Hemos enviado un correo electrónico a tu dirección de correo electrónico. Por favor, ingresa el código de verificación para continuar.",
+      "reset": "Cambiar correo electrónico",
+      "error": {
+        "title": "Error al verificar el correo electrónico",
+        "description": "El código de verificación es incorrecto. Por favor, inténtalo de nuevo."
+      }
+    },
+    "form": {
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Registrarse",
+      "has-account": "¿Ya tienes una cuenta?",
+      "sign-in": "Iniciar sesión",
+      "error": {
+        "title": "Error al registrarse",
+        "description": "El correo electrónico ya está en uso. Por favor, utiliza otro correo electrónico."
+      }
+    }
+  },
+  "Common": {
+    "billboard": {
+      "update": "Editar cartel",
+      "enable": "Habilitar cartel",
+      "disable": "Deshabilitar cartel",
+      "delete": "Eliminar cartel"
+    },
+    "glossary": {
+      "address": "Dirección",
+      "status": "Estado",
+      "schedule": "Programación",
+      "resolution": "Resolución",
+      "measurements": "Medidas",
+      "spot-duration": "Duración de spot",
+      "daily-impressions": "Impresiones diarias"
+    },
+    "action": {
+      "schedule": "Programar",
+      "search": "Buscar"
+    },
+    "top-bar": {
+      "create-billboard": "Publicar un cartel",
+      "main-nav": {
+        "billboards": "Buscar carteles",
+        "bookings": "Mis reservas",
+        "admin-panel": "Panel administrativo"
+      }
+    },
+    "provider-top-bar": {
+      "create-billboard": "Publicar un cartel",
+      "nav": {
+        "billboards": "Carteles",
+        "bookings": "Reservas"
+      }
+    },
+    "update-billboard": {
+      "success": {
+        "title": "Cartel actualizado",
+        "description": "Tu cartel ha sido actualizado con éxito."
+      }
+    },
+    "user-nav": {
+      "sign-in": "Iniciar sesión",
+      "sign-out": "Cerrar sesión",
+      "sign-up": "Registrarse",
+      "theme": {
+        "title": "Tema",
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+      }
+    },
+    "billboard-status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "schedule": {
+      "price": {
+        "weekly": "semana",
+        "monthly": "mes"
+      },
+      "weekly": "Semanal",
+      "monthly": "Mensual"
+    }
+  },
+  "Billboards": {
+    "empty": {
+      "title": "No hay carteles disponibles",
+      "description": "Prueba cambiar el área de búsqueda o intenta de nuevo más tarde."
+    }
+  }
+}
