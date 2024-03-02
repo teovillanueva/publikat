@@ -134,17 +134,15 @@ export function BillboardsMap({
           selectedBillboardId={selectedBillboardId}
         />
         {billboards.map((b) => (
-          <>
-            <Marker
-              onClick={(e) => {
-                setSelectedBillboardId(b.id);
-                e.originalEvent.stopPropagation();
-              }}
-              key={b.id}
-              longitude={b.location.coordinates[0]}
-              latitude={b.location.coordinates[1]}
-            />
-          </>
+          <Marker
+            onClick={(e) => {
+              setSelectedBillboardId(b.id);
+              e.originalEvent.stopPropagation();
+            }}
+            key={b.id}
+            longitude={b.location.coordinates[0]}
+            latitude={b.location.coordinates[1]}
+          />
         ))}
       </Map>
     </div>

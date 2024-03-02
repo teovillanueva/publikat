@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Spinner } from "./spinner";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex  items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -51,7 +51,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const element = c as React.ReactElement;
 
         if (loading) {
-          return null;
+          return React.cloneElement(element, {
+            className: "opacity-0",
+          });
         }
       }
 
@@ -66,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading && <Spinner className="absolute" />}
-        <span className={cn(loading && "opacity-0")}>{_children}</span>
+        <span className={cn("flex", loading && "opacity-0")}>{_children}</span>
       </button>
     );
   }
