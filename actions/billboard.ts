@@ -37,7 +37,7 @@ export async function updateBillboard(
 }
 
 export async function updateBillboardStatus(
-  id: string,
+  id: string | string[],
   status: "active" | "inactive"
 ) {
   const { userId } = auth();

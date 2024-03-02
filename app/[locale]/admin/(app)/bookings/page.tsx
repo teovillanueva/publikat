@@ -1,24 +1,14 @@
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { BillboardsTable } from "./_components/table";
-import { findBillboardsByUserId } from "@/lib/server/data/billboards";
-import { auth } from "@clerk/nextjs";
 import { EmptyState } from "@/components/empty-state";
 import { MessageSquareOff } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { BillboardSheet } from "./_components/billboard-sheet";
 
 export const runtime = "edge";
 
 export default async function Billboards() {
-  const t = await getTranslations("Admin.Billboards");
-  const billboards = await findBillboardsByUserId(auth().userId!);
-
-  const createButton = (
-    <BillboardSheet type="create">
-      <Button>Crear cartel</Button>
-    </BillboardSheet>
-  );
+  const t = await getTranslations("Admin.Bookings");
+  const billboards: any[] = [];
 
   return (
     <div className="">
@@ -27,7 +17,6 @@ export default async function Billboards() {
           <h1 className="text-3xl font-semibold">{t("title")}</h1>
           <p className="text-sm text-muted-foreground">{t("description")}</p>
         </div>
-        {billboards.length > 0 && createButton}
       </div>
       <Separator />
       <div className="pt-6 container">
@@ -35,11 +24,9 @@ export default async function Billboards() {
           <div className="pt-8">
             <EmptyState
               icon={<MessageSquareOff />}
-              title="No tienes carteles"
-              description="Parece que no tienes ningún cartel. Puedes crear uno nuevo haciendo click en el boton de abajo."
-            >
-              {createButton}
-            </EmptyState>
+              title={t("empty.title")}
+              description={t("empty.description")}
+            />
           </div>
         ) : (
           <BillboardsTable billboards={billboards} />

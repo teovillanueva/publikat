@@ -1,6 +1,6 @@
 import { db } from "@/db";
 import { billboards } from "@/db/schema";
-import { and, desc, eq, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, sql } from "drizzle-orm";
 import { BBox } from "geojson";
 import { findProviderByUserId } from "./providers";
 
@@ -47,14 +47,19 @@ export function findBillboardsInArea(bbox: BBox) {
 }
 
 export function updateBillboard(
-  id: string,
+  id: string | string[],
   userId: string,
   data: Omit<Partial<typeof billboards.$inferInsert>, "userId" | "providerId">
 ) {
   return db
     .update(billboards)
     .set(data)
-    .where(and(eq(billboards.id, id), eq(billboards.userId, userId)))
+    .where(
+      and(
+        Array.isArray(id) ? inArray(billboards.id, id) : eq(billboards.id, id),
+        eq(billboards.userId, userId)
+      )
+    )
     .returning();
 }
 

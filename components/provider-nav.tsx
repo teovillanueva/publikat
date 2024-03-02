@@ -14,11 +14,11 @@ export function ProviderNav({ className, ...props }: ProviderNavProps) {
     label: Parameters<typeof t>[0];
   }[] = [
     {
-      href: "/billboards",
+      href: "/admin/billboards",
       label: "billboards",
     },
     {
-      href: "/bookings",
+      href: "/admin/bookings",
       label: "bookings",
     },
   ];

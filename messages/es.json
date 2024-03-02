@@ -6,9 +6,21 @@
     "cancel": "Cancelar"
   },
   "Admin": {
+    "Bookings": {
+      "title": "Reservas",
+      "description": "Aquí puedes ver todas y gestionar las reservas que tienes en tu cuenta.",
+      "empty": {
+        "title": "No tienes reservas",
+        "description": "Parece que no tienes ninguna reserva. Es cuestión de tiempo."
+      }
+    },
     "Billboards": {
       "title": "Carteles",
-      "description": "Aqui puedes ver todos los carteles que tienes en tu cuenta.",
+      "description": "Aquí puedes ver todos los carteles que tienes en tu cuenta.",
+      "empty": {
+        "title": "No tienes carteles",
+        "description": "Parece que no tienes ningún cartel. Puedes crear uno nuevo haciendo click en el botón de abajo."
+      },
       "Billboard-Form": {
         "placeholder": {
           "address": "Calle Falsa 123",
