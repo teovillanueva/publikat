@@ -68,7 +68,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading && <Spinner className="absolute" />}
-        <span className={cn("flex", loading && "opacity-0")}>{_children}</span>
+        <span className={cn("btn-flex flex", loading && "opacity-0")}>
+          {_children}
+        </span>
       </button>
     );
   }

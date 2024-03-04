@@ -6,9 +6,15 @@ import { Link, usePathname } from "./navigation";
 
 interface MainNavProps extends React.HTMLAttributes<HTMLElement> {
   isProvider?: boolean;
+  isAuthenticated?: boolean;
 }
 
-export function MainNav({ className, isProvider, ...props }: MainNavProps) {
+export function MainNav({
+  className,
+  isProvider,
+  isAuthenticated,
+  ...props
+}: MainNavProps) {
   const t = useTranslations("Common.top-bar.main-nav");
   const pathname = usePathname();
   const items: {
@@ -19,11 +25,14 @@ export function MainNav({ className, isProvider, ...props }: MainNavProps) {
       href: "/billboards",
       label: "billboards",
     },
-    {
+  ];
+
+  if (isAuthenticated) {
+    items.push({
       href: "/bookings",
       label: "bookings",
-    },
-  ];
+    });
+  }
 
   if (isProvider) {
     items.push({
@@ -40,8 +49,8 @@ export function MainNav({ className, isProvider, ...props }: MainNavProps) {
       {items.map((item, index) => (
         <Link
           className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
-            pathname.endsWith(item.href)
+            "text-sm font-medium transition-colors hover:text-primary justify-stretch",
+            pathname.endsWith(item.href) || pathname.startsWith(item.href)
               ? "text-foreground"
               : "text-muted-foreground"
           )}

@@ -17,6 +17,7 @@ import GeocoderControl from "./geocoder-control";
 import { BillboardCard } from "./billboard-card";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+import { useAuth } from "@clerk/nextjs";
 
 type PopulatedBillboard = Billboard & {
   provider: Provider;
@@ -38,6 +39,7 @@ function BillboardPopup({
   selectedBillboardId,
   onClose,
 }: BillboardPopupProps) {
+  const { userId } = useAuth();
   const billboard = billboards.find((b) => b.id === selectedBillboardId);
 
   if (!billboard) return null;
@@ -50,7 +52,7 @@ function BillboardPopup({
       onClose={onClose}
       className="[&>.mapboxgl-popup-content]:p-0 min-w-[330px]"
     >
-      <BillboardCard billboard={billboard} />
+      <BillboardCard isAuthenticated={!!userId} billboard={billboard} />
     </Popup>
   );
 }
@@ -114,6 +116,7 @@ export function BillboardsMap({
         initialViewState={{
           bounds: initialBounds,
           fitBoundsOptions: {
+            maxZoom: 14,
             padding: { top: 200, bottom: 200, left: 100, right: 100 },
           },
         }}

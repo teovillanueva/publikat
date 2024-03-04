@@ -17,7 +17,11 @@ export function findActiveBillboardById(id: string) {
 }
 
 export function findBillboards() {
-  return db.query.billboards.findMany({ limit: 100, with: { provider: true } });
+  return db.query.billboards.findMany({
+    where: eq(billboards.status, "active"),
+    limit: 100,
+    with: { provider: true },
+  });
 }
 
 export function findBillboardsByProviderId(providerId: string) {

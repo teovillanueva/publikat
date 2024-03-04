@@ -1,3 +1,11 @@
+export function getDateFormat(locale: string) {
+  return new Intl.DateTimeFormat(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export function getInitials(name: string): string {
   return name
     .split(" ")

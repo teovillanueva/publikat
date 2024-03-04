@@ -65,8 +65,6 @@ export function SignUpForm({ redirectUrl = "/" }: SignUpFormProps) {
   const [loading, setLoading] = React.useState(false);
   const [otp, setOtp] = React.useState("");
 
-  console.log(signUp);
-
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
   });

@@ -4,6 +4,19 @@ import { findActiveBillboardById } from "./billboards";
 import { and, eq, lt } from "drizzle-orm";
 import dayJs from "dayjs";
 
+export async function findExistingBookingForUser(
+  billboardId: string,
+  userId: string
+) {
+  return db.query.bookings.findFirst({
+    where: and(
+      eq(bookings.billboardId, billboardId),
+      eq(bookings.userId, userId),
+      eq(bookings.status, "pending")
+    ),
+  });
+}
+
 export async function createBooking(
   data: Omit<typeof bookings.$inferInsert, "status" | "endDate" | "schedule">
 ) {

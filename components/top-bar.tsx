@@ -35,7 +35,7 @@ export function TopBar({ provider, userId }: TopBarProps) {
           height={40}
         />
 
-        <MainNav isProvider={!!provider} />
+        <MainNav isAuthenticated={!!userId} isProvider={!!provider} />
 
         <div className="ml-auto flex items-center space-x-4">
           <Link

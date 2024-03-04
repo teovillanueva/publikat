@@ -7,6 +7,7 @@ import { EmptyState } from "@/components/empty-state";
 import { MessageSquareOff } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { BillboardSheet } from "./_components/billboard-sheet";
+import { Header } from "@/components/header";
 
 export const runtime = "edge";
 
@@ -21,14 +22,10 @@ export default async function Billboards() {
   );
 
   return (
-    <div className="">
-      <div className="py-6 flex items-center container">
-        <div className="flex-1">
-          <h1 className="text-3xl font-semibold">{t("title")}</h1>
-          <p className="text-sm text-muted-foreground">{t("description")}</p>
-        </div>
+    <div>
+      <Header title={t("title")} description={t("description")}>
         {billboards.length > 0 && createButton}
-      </div>
+      </Header>
       <Separator />
       <div className="pt-6 container">
         {billboards.length === 0 ? (

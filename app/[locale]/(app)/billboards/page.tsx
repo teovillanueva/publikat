@@ -6,6 +6,7 @@ import {
   findBillboards,
   findBillboardsInArea,
 } from "@/lib/server/data/billboards";
+import { auth } from "@clerk/nextjs";
 import { MessageSquareOff } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
@@ -17,6 +18,8 @@ interface BillboardsProps {
 
 export default async function Billboards({ searchParams }: BillboardsProps) {
   const t = await getTranslations("Billboards");
+
+  const { userId } = auth();
 
   const billboards = searchParams.bbox
     ? await findBillboardsInArea(JSON.parse(searchParams.bbox))
@@ -40,7 +43,7 @@ export default async function Billboards({ searchParams }: BillboardsProps) {
           />
         )}
         {billboards.map((b) => (
-          <BillboardCard key={b.id} billboard={b} />
+          <BillboardCard isAuthenticated={!!userId} key={b.id} billboard={b} />
         ))}
       </div>
       <div className="flex col-span-3">

@@ -1,4 +1,8 @@
 {
+  "Book-Billboard": {
+    "title": "Reservar cartel",
+    "description": "Completa los datos para reservar este cartel."
+  },
   "Delete-Billboard": {
     "title": "Eliminar cartel",
     "description": "¿Estas seguro que deseas eliminar este cartel? Una ves eliminar no podrás volver atrás.",
